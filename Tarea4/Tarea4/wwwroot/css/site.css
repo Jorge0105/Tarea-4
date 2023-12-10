@@ -1,0 +1,47 @@
+
+h1, h2 {
+    text-align: center;
+    color: #fff; /* Texto blanco */
+}
+
+form {
+    max-width: 400px;
+    width: 100%;
+    background-color: #fff; /* Fondo blanco del formulario */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra del formulario */
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50; /* Verde */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pass {
+    color: #2ecc71; /* Verde más oscuro para el texto de éxito */
+}
+
+.fail {
+    color: #e74c3c; /* Rojo oscuro para el texto de error */
+}
+

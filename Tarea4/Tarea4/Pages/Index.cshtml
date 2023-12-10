@@ -1,0 +1,97 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Informe de Prueba de Inicio de Sesión</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+
+            .pass {
+                color: green;
+            }
+
+            .fail {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>Informe de Prueba de Inicio de Sesión</h1>
+
+        <!-- Detalles de la Prueba -->
+        <h2>Detalles de la Prueba</h2>
+        <ul>
+            <li>Login</li>
+            
+        </ul>
+
+        <!-- Formulario de Inicio de Sesión -->
+        <!-- Formulario de Inicio de Sesión -->
+        <form id="loginForm">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username">
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password">
+
+            <button type="button" onclick="verificarCredenciales()">Iniciar Sesión</button>
+
+            <div id="resultado"></div>
+        </form>
+
+        <!-- Enlace para registrarse -->
+        <p>Si no tienes una cuenta, <a href="#">presiona aquí</a> para registrarte.</p>
+
+        <script>
+
+            function verificarCredenciales() {
+                // Obtener valores de los campos
+                var usuario = document.getElementById("username").value;
+                var contrasena = document.getElementById("password").value;
+
+                // Verificar las credenciales (puedes ajustar estas comparaciones según tus necesidades)
+                if (usuario === "Jorge" && contrasena === "Cabral") {
+                    mostrarResultado(true);  // Credenciales correctas
+                } else {
+                    mostrarResultado(false); // Credenciales incorrectas
+                }
+            }
+
+            function mostrarResultado(esCorrecto) {
+                var resultadoElement = document.getElementById("resultado");
+
+                // Limpiar resultado anterior
+                resultadoElement.innerHTML = "";
+
+                // Crear elemento de resultado
+                var resultadoTexto = document.createElement("span");
+                resultadoTexto.style.fontWeight = "bold";
+
+                if (esCorrecto) {
+                    resultadoTexto.innerText = " ✔ Credenciales correctas";
+                    resultadoTexto.className = "pass";
+                } else {
+                    resultadoTexto.innerText = " ✘ Credenciales incorrectas";
+                    resultadoTexto.className = "fail";
+                }
+
+                // Agregar el elemento al DOM
+                resultadoElement.appendChild(resultadoTexto);
+            }
+        </script>
+
+    </body>
+</html>
+
+</div>
